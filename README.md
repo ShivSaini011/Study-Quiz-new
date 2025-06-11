@@ -80,7 +80,7 @@ Feel free to contribute to the project by opening issues or submitting pull requ
 
 ![Screenshot (84)](https://github.com/ShivSaini011/Study-Quiz-new/assets/img1.png)
 
-
+https://github.com/ShivSaini011/Study-Quiz-new/assets/img1.png
 
 **Register:**
 ![Screenshot (85)](https://github.com/ShivSaini011/Study-Quiz-new/assets/101879714/7af66295-bac6-4af2-a415-d666ffc9fb00)
