@@ -78,7 +78,7 @@ Feel free to contribute to the project by opening issues or submitting pull requ
 ## Site Images
 **Login:**
 
-![Screenshot (84)](https://github.com/ShivSaini011/Study-Quiz-new/assets/img1.png)
+[![Screenshot (84)](https://github.com/ShivSaini011/Study-Quiz-new/blob/main/assets/img1.png)]
 
 https://github.com/ShivSaini011/Study-Quiz-new/assets/img1.png
 
