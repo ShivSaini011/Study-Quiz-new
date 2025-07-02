@@ -41,7 +41,7 @@ function App() {
           <Route path='/courses' element={<ProtectedRoute><Courses/></ProtectedRoute>} />
           <Route path='/course/:id' element={<ProtectedRoute><Course/></ProtectedRoute>} />
           <Route path='/discussion/:id' element={<ProtectedRoute><Forum/></ProtectedRoute>} />
-          <Route path='/certificate/:id' element={<ProtectedRoute><certificate/></ProtectedRoute>} />
+          <Route path='/certificate/:id' Component={certificate}></Route>
           <Route path='/assessment/:id' element={<ProtectedRoute><Assessment/></ProtectedRoute>} />
           <Route path='/addcourse' element={<AdminRoute><AddCourse/></AdminRoute>} />
           <Route path='/editCourse/:id' element={<AdminRoute><EditCourse/></AdminRoute>} />
