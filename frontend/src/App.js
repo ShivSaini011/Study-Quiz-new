@@ -23,6 +23,7 @@ import DTutors from './Components/DashBoard/DTutors';
 import certificate from './Components/certificate';
 import Forum from './Components/forum';
 import About from './Components/About';
+import { ProtectedRoute, AdminRoute } from './Components/ProtectedRoute';
 
 
 
@@ -31,26 +32,26 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/addquestions/:id" element={<AddQuestions/>}/>
-          <Route path='/dashboard' Component={Dashboard}></Route>
-          <Route path='/login' Component={Login}></Route>
-          <Route path='/about' Component={About}></Route>
-          <Route path='/register' Component={Register}></Route>
-          <Route path='/' Component={Home}></Route>
-          <Route path='/courses' Component={Courses}></Route>
-          <Route path='/course/:id' Component={Course}></Route>
-          <Route path='/discussion/:id' Component={Forum}></Route>
-          <Route path='/certificate/:id' Component={certificate}></Route>
-          <Route path='/assessment/:id' Component={Assessment}></Route>
-          <Route path='/addcourse' Component={AddCourse}></Route>
-          <Route path='/editCourse/:id' Component={EditCourse}></Route>
-          <Route path='/profile' Component={Profile}></Route>
-          <Route path='/Learnings' Component={Learnings}></Route>
-          <Route path='/Dcourses' Component={DCourses}></Route>
-          <Route path='/Dusers' Component={DUsers}></Route>
-          <Route path='/' Component={DTutors}></Route>
-          <Route path='/Performance' Component={Performance} />
-          <Route path='*' Component={ErrorPage}></Route>
+          <Route path="/addquestions/:id" element={<AdminRoute><AddQuestions/></AdminRoute>}/>
+          <Route path='/dashboard' element={<AdminRoute><Dashboard/></AdminRoute>} />
+          <Route path='/login' element={<Login/>} />
+          <Route path='/about' element={<About/>} />
+          <Route path='/register' element={<Register/>} />
+          <Route path='/' element={<Home/>} />
+          <Route path='/courses' element={<ProtectedRoute><Courses/></ProtectedRoute>} />
+          <Route path='/course/:id' element={<ProtectedRoute><Course/></ProtectedRoute>} />
+          <Route path='/discussion/:id' element={<ProtectedRoute><Forum/></ProtectedRoute>} />
+          <Route path='/certificate/:id' element={<ProtectedRoute><certificate/></ProtectedRoute>} />
+          <Route path='/assessment/:id' element={<ProtectedRoute><Assessment/></ProtectedRoute>} />
+          <Route path='/addcourse' element={<AdminRoute><AddCourse/></AdminRoute>} />
+          <Route path='/editCourse/:id' element={<AdminRoute><EditCourse/></AdminRoute>} />
+          <Route path='/profile' element={<ProtectedRoute><Profile/></ProtectedRoute>} />
+          <Route path='/Learnings' element={<ProtectedRoute><Learnings/></ProtectedRoute>} />
+          <Route path='/Dcourses' element={<AdminRoute><DCourses/></AdminRoute>} />
+          <Route path='/Dusers' element={<AdminRoute><DUsers/></AdminRoute>} />
+          <Route path='/Dtutors' element={<AdminRoute><DTutors/></AdminRoute>} />
+          <Route path='/Performance' element={<AdminRoute><Performance/></AdminRoute>} />
+          <Route path='*' element={<ErrorPage/>} />
         </Routes>
       </BrowserRouter>
       <ToastContainer/>

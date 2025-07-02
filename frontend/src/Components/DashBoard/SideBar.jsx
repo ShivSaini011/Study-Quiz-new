@@ -11,6 +11,10 @@ function SideBar(props){
           <img src={img1} alt=""/>
           <span className="text" id="admin">LMS Admin</span>
           </Link>
+          <Link to={"/"} className="brand a" >
+          {/* <img src={img1} alt=""/> */}
+          <span className="text" id="admin">Back To Home</span>
+          </Link>
           
           <ul className="side-menu">
           <li className={current ==="dashboard" ? 'active' : ''} >

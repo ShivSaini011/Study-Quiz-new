@@ -35,7 +35,12 @@ function Login() {
           const ud = await userDetailsResponse.json();
           localStorage.setItem("name", ud["username"]);
           localStorage.setItem("id", ud["id"]);
-          console.log("Hello");
+          // Set default role as student if not present
+          if (!ud["role"]) {
+            localStorage.setItem("role", "student");
+          } else {
+            localStorage.setItem("role", ud["role"]);
+          }
           setUser({ name: ud["name"], email: email, id: ud["id"] });
           navigate("/courses");
         } else {

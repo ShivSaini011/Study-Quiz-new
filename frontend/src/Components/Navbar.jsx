@@ -9,6 +9,7 @@ function Navbar(props) {
   const value = props.page;
   const navigate = useNavigate();
   const authToken = localStorage.getItem("token");
+  const role = localStorage.getItem("role");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleLogOut = () => {
@@ -78,27 +79,36 @@ function Navbar(props) {
                 <Link to={"/courses"}>Courses</Link>
               </li>
             )}
-            {authToken ? (
-              value === "profile" ? (
-                <li style={{ backgroundColor: "purple", borderRadius: "5px" }}>
-                  <Link
-                    to={"/profile"}
-                    style={{ color: "white", padding: "10px" }}
-                  >
-                    Profile
-                    <FontAwesomeIcon icon={faUser} />
-                  </Link>
-                </li>
-              ) : (
-                <li>
-                  <Link to={"/profile"}>
-                    Profile
-                    <FontAwesomeIcon icon={faUser} />
-                  </Link>
-                </li>
-              )
-            ) : (
-              <></>
+            {authToken && (
+              role === "admin"
+                ? (value === "dashboard"
+                    ? (<li style={{ backgroundColor: "purple", borderRadius: "5px" }}>
+                        <Link to="/dashboard" style={{ color: "white", padding: "10px" }}>
+                          Dashboard
+                          <FontAwesomeIcon icon={faUser} />
+                        </Link>
+                      </li>)
+                    : (<li>
+                        <Link to="/dashboard">
+                          Dashboard
+                          <FontAwesomeIcon icon={faUser} />
+                        </Link>
+                      </li>)
+                  )
+                : (value === "profile"
+                    ? (<li style={{ backgroundColor: "purple", borderRadius: "5px" }}>
+                        <Link to="/profile" style={{ color: "white", padding: "10px" }}>
+                          Profile
+                          <FontAwesomeIcon icon={faUser} />
+                        </Link>
+                      </li>)
+                    : (<li>
+                        <Link to="/profile">
+                          Profile
+                          <FontAwesomeIcon icon={faUser} />
+                        </Link>
+                      </li>)
+                  )
             )}
             {authToken ? (
               value === "learnings" ? (
